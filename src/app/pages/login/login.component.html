@@ -1,0 +1,30 @@
+<!-- src/app/pages/login/login.component.html -->
+<div class="container">
+  <!-- Lado izquierdo: Branding RedColab -->
+  <section class="branding">
+    <h1>RedColab</h1>
+    <!-- Espacio para la imagen -->
+    <div class="branding-image">
+      <img src="assets/images/buho.png" alt="RedColab - Plataforma Educativa" />
+
+    </div>
+  </section>
+
+  <!-- Lado derecho: Formulario de login -->
+  <section class="login">
+    <h2>Iniciar sesión</h2>
+
+    <!-- Formulario de inicio de sesión con ngModel -->
+    <form (ngSubmit)="onLogin()" class="login-form">
+      <label for="email">Correo electrónico</label>
+      <input [(ngModel)]="email" name="email" id="email" placeholder="Correo" type="email" required />
+
+      <label for="password">Contraseña</label>
+      <input [(ngModel)]="password" name="password" id="password" placeholder="••••••••" type="password" required />
+
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <p>{{ message }}</p>
+  </section>
+</div>

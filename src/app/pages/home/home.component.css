@@ -1,0 +1,158 @@
+/* Inspirado en la imagen: Definir variables de color */
+:root {
+  --primary-blue: #0d6efd; /* Azul similar al de la imagen */
+  --primary-blue-darker: #0b5ed7; /* Azul más oscuro para hover */
+  --text-dark: #212529;   /* Texto principal oscuro */
+  --text-muted: #6c757d;  /* Texto secundario gris */
+  --border-color: #dee2e6; /* Color de borde suave */
+  --background-light: #f8f9fa; /* Fondo general claro */
+  --background-white: #ffffff; /* Fondo de tarjetas */
+  --box-shadow-light: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Sombra sutil */
+}
+
+/* Estilo base del cuerpo para aplicar la fuente */
+body { /* O aplica esto a un contenedor más específico si no quieres afectar toda la app */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--background-light); /* Fondo general claro */
+  margin: 0; /* Asegurar que no haya margen por defecto */
+}
+
+/* Contenedor principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cabecera - Estilo similar a la barra superior de la imagen */
+.top-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 30px; /* Ajustar padding */
+  background-color: var(--background-white); /* Fondo blanco como en la imagen */
+  border-bottom: 1px solid var(--border-color); /* Borde inferior */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenedor de los botones */
+.auth-buttons {
+  /* No necesita mucho estilo si el header usa flex-end */
+}
+
+/* Estilo general para los botones, inspirado en "Nueva Solicitud" */
+.auth-buttons .btn {
+  padding: 8px 18px;
+  margin-left: 12px;
+  border-radius: 6px; /* Esquinas redondeadas */
+  cursor: pointer;
+  font-size: 0.9rem; /* Tamaño de fuente ajustado */
+  font-weight: 500; /* Un poco menos bold que antes */
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  border: 1px solid transparent; /* Borde base transparente */
+}
+
+.auth-buttons .btn:active {
+  transform: scale(0.98);
+}
+
+/* Botón Login - Estilo primario (azul sólido) */
+.btn-login {
+  background-color: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+}
+
+.btn-login:hover {
+  background-color: var(--primary-blue-darker);
+  border-color: var(--primary-blue-darker);
+}
+
+/* Botón Register - Estilo secundario (borde azul, texto azul) */
+.btn-register {
+  background-color: var(--background-white); /* Fondo blanco */
+  color: var(--primary-blue); /* Texto azul */
+  border-color: var(--primary-blue); /* Borde azul */
+}
+
+.btn-register:hover {
+  background-color: var(--primary-blue); /* Cambia a fondo azul en hover */
+  color: white; /* Texto blanco en hover */
+}
+
+/* Contenido Principal */
+.main-content {
+  flex-grow: 1;
+  padding: 40px 30px; /* Más padding vertical */
+  text-align: center;
+}
+
+.main-content h1 {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 500; /* Peso de fuente para títulos */
+}
+
+.main-content p {
+  color: var(--text-muted); /* Texto más suave para párrafos */
+  margin-bottom: 40px; /* Más espacio debajo del párrafo introductorio */
+  max-width: 600px; /* Limitar ancho para legibilidad */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sección de cursos destacados - Contenedor */
+.featured-courses {
+  margin-top: 40px;
+}
+
+.featured-courses h2 {
+  font-size: 1.5rem; /* Tamaño del título de sección */
+  color: var(--text-dark);
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Estilo de Tarjeta - Aplicado a .course-card */
+.course-card {
+  background-color: var(--background-white); /* Fondo blanco */
+  border: 1px solid var(--border-color); /* Borde gris claro */
+  border-radius: 8px; /* Esquinas redondeadas */
+  padding: 25px; /* Más padding interno */
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: var(--box-shadow-light); /* Sombra sutil */
+  text-align: left;
+  transition: box-shadow 0.2s ease-in-out; /* Transición suave para hover */
+}
+
+.course-card:hover {
+   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra ligeramente más pronunciada */
+}
+
+.course-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px; /* Espacio debajo del título del curso */
+  color: var(--text-dark); /* Título oscuro */
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.course-card p {
+  color: var(--text-muted); /* Descripción con texto gris */
+  font-size: 0.95rem;
+  margin-bottom: 0; /* Quitar margen inferior si es el último elemento */
+}
+
+/* Pie de página - Estilo más limpio */
+.footer {
+  text-align: center;
+  padding: 25px; /* Más padding */
+  background-color: var(--background-white); /* Fondo blanco */
+  color: var(--text-muted); /* Texto gris */
+  border-top: 1px solid var(--border-color); /* Borde superior */
+  margin-top: auto;
+  font-size: 0.9rem;
+}
