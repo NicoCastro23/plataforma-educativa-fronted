@@ -1,1 +1,140 @@
-/* You can add global styles to this file, and also import other style files */
+/* Definición de colores inspirados en la imagen anterior */
+:root {
+  --primary-blue: #0d6efd;       /* Azul principal de la imagen */
+  --primary-blue-darker: #0b5ed7;  /* Azul más oscuro para hover/estados activos */
+  --text-dark: #212529;        /* Texto oscuro principal */
+  --text-light: #ffffff;       /* Texto claro (blanco) */
+  --border-color: #dee2e6;     /* Gris claro para bordes */
+  --background-light: #f8f9fa; /* Fondo general muy claro (casi blanco) */
+  --background-white: #ffffff;    /* Fondo blanco para contenedores */
+  --box-shadow-color: rgba(0, 0, 0, 0.1); /* Color base para sombras */
+}
+
+* { /* Reset básico */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-light); /* Color de fondo general claro */
+  color: var(--text-dark);                 /* Color de texto principal oscuro */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  background: var(--background-white);     /* Fondo blanco para el contenedor principal */
+  display: flex;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--box-shadow-color); /* Sombra suave */
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+.branding {
+  flex: 1;
+  background-color: var(--primary-blue);     /* Fondo azul principal para la sección de branding */
+  color: var(--text-light);                /* Texto blanco sobre fondo azul */
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.branding h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  /* El color ya es 'var(--text-light)' por herencia de .branding */
+}
+
+.branding p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  /* El color ya es 'var(--text-light)' por herencia de .branding */
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  /* Usamos un azul un poco más claro aquí o el mismo primario? Usemos el primario */
+  background-color: var(--primary-blue-darker); /* O var(--primary-blue) si prefieres */
+  color: var(--text-light);                   /* Texto blanco */
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* LOGIN FORM */
+.login {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue); /* Título del login en azul principal */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  /* Hereda el color de texto oscuro del body */
+}
+
+.login-form input {
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-color); /* Borde gris claro */
+  border-radius: 8px;
+}
+
+.login-form button {
+  background-color: var(--primary-blue); /* Botón con fondo azul principal */
+  color: var(--text-light);             /* Texto del botón blanco */
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: var(--primary-blue-darker); /* Azul más oscuro en hover */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .branding,
+  .login {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .pill-group {
+    justify-content: center;
+  }
+}
